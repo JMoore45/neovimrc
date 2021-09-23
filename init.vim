@@ -5,12 +5,12 @@
  Plug 'junegunn/seoul256.vim'
  Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-lua/plenary.nvim'
- Plug 'sirver/ultisnips'
+" Plug 'sirver/ultisnips'
  Plug 'gruvbox-community/gruvbox'
- Plug 'lervag/vimtex'
-    let g:tex_flavor='latex'
-    let g:vimtex_view_method='zathura'
-    let g:vimtex_quickfix_mode=0
+" Plug 'lervag/vimtex'
+"    let g:tex_flavor='latex'
+"    let g:vimtex_view_method='zathura'
+"    let g:vimtex_quickfix_mode=0
  " List ends here. Plugins become visible to Vim after this call.
  call plug#end()
 
