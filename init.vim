@@ -16,6 +16,7 @@
 
  
 let mapleader = ' '
+inoremap jk <ESC>
 
 colorscheme gruvbox
 syntax on
