@@ -5,20 +5,22 @@
  Plug 'junegunn/seoul256.vim'
  Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-lua/plenary.nvim'
-" Plug 'sirver/ultisnips'
- Plug 'gruvbox-community/gruvbox'
-" Plug 'lervag/vimtex'
+ Plug 'sirver/ultisnips'
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'marko-cerovac/material.nvim'
+     let g:material_style='palenight'
+ Plug 'lervag/vimtex'
 "    let g:tex_flavor='latex'
 "    let g:vimtex_view_method='zathura'
 "    let g:vimtex_quickfix_mode=0
  " List ends here. Plugins become visible to Vim after this call.
  call plug#end()
 
- 
 let mapleader = ' '
 inoremap jk <ESC>
 
-colorscheme gruvbox
+colorscheme material
+hi Normal ctermbg=none guibg=none
 syntax on
  
 set clipboard=unnamedplus
@@ -41,5 +43,4 @@ set incsearch
 set nohlsearch
 set scrolloff=8
 set termguicolors
-set colorcolumn=100
 set signcolumn=yes
