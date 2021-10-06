@@ -1,3 +1,1 @@
-# neovimrc
-This repository keeps my existing neovim configurations under
-revision control for easy access across platforms.
+This is a repository that keeps track of my nvim settings.

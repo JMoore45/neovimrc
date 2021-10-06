@@ -1,28 +1,46 @@
 " Plugins will be downloaded under the specified directory.
  call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
  " Declare the list of plugins.
+
  Plug 'tpope/vim-sensible'
- Plug 'junegunn/seoul256.vim'
  Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-lua/plenary.nvim'
- Plug 'sirver/ultisnips'
+
+ " LSP
+ Plug 'neovim/nvim-lspconfig'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
- Plug 'marko-cerovac/material.nvim'
-     let g:material_style='palenight'
+
+ " Snippets
+ Plug 'rafamadriz/friendly-snippets'
+ Plug 'L3MON4D3/LuaSnip'
+
+ " Colorscheme
+ Plug 'gruvbox-community/gruvbox'
+
+ " Latex
  Plug 'lervag/vimtex'
-"    let g:tex_flavor='latex'
-"    let g:vimtex_view_method='zathura'
-"    let g:vimtex_quickfix_mode=0
+    let g:tex_flavor='latex'
+    let g:vimtex_view_method='zathura'
+    let g:vimtex_quickfix_mode=0
+
  " List ends here. Plugins become visible to Vim after this call.
  call plug#end()
 
+let g:python3_host_prog = '/usr/bin/python3'
+let g:vimtex_compiler_progname = 'nvr'
 let mapleader = ' '
 inoremap jk <ESC>
 
-colorscheme material
-hi Normal ctermbg=none guibg=none
+colorscheme gruvbox
+highlight ExtraWhiteSpace ctermbg=red guibg=red
+match ExtraWhiteSpace /\s\+$/
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+au BufWinLeave * call clearmatches()
+
 syntax on
- 
+
 set clipboard=unnamedplus
 setlocal spell
 set spelllang=en_us
@@ -44,3 +62,9 @@ set nohlsearch
 set scrolloff=8
 set termguicolors
 set signcolumn=yes
+
+" Add language server
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+
