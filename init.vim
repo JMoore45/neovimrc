@@ -32,12 +32,6 @@ let mapleader = ' '
 inoremap jk <ESC>
 
 colorscheme gruvbox
-highlight ExtraWhiteSpace ctermbg=red guibg=red
-match ExtraWhiteSpace /\s\+$/
-au BufWinEnter * match ExtraWhitespace /\s\+$/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match ExtraWhitespace /\s\+$/
-au BufWinLeave * call clearmatches()
 
 syntax on
 
@@ -68,3 +62,11 @@ lua << EOF
 require'lspconfig'.pyright.setup{}
 EOF
 
+
+" Highlight trailing whitespace
+"highlight ExtraWhiteSpace ctermbg=red guibg=red
+"match ExtraWhiteSpace /\s\+$/
+"au BufWinEnter * match ExtraWhitespace /\s\+$/
+"au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"au InsertLeave * match ExtraWhitespace /\s\+$/
+"au BufWinLeave * call clearmatches()
