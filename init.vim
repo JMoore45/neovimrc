@@ -1,13 +1,10 @@
-" Plugins will be downloaded under the specified directory.
+ " Plugins will be downloaded under the specified directory.
  call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
  " Declare the list of plugins.
 
  Plug 'tpope/vim-sensible'
  Plug 'nvim-lua/popup.nvim'
  Plug 'nvim-lua/plenary.nvim'
-
- " LSP
- Plug 'neovim/nvim-lspconfig'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
  " Snippets
@@ -56,11 +53,6 @@ set nohlsearch
 set scrolloff=8
 set termguicolors
 set signcolumn=yes
-
-" Add language server
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
 
 
 " Highlight trailing whitespace
