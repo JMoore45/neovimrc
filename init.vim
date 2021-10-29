@@ -53,12 +53,3 @@ set nohlsearch
 set scrolloff=8
 set termguicolors
 set signcolumn=yes
-
-
-" Highlight trailing whitespace
-"highlight ExtraWhiteSpace ctermbg=red guibg=red
-"match ExtraWhiteSpace /\s\+$/
-"au BufWinEnter * match ExtraWhitespace /\s\+$/
-"au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-"au InsertLeave * match ExtraWhitespace /\s\+$/
-"au BufWinLeave * call clearmatches()
